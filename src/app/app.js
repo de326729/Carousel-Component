@@ -1,11 +1,11 @@
 var ImageList = [
   {
-    url: '../../assets/covid11.jpg',
+    url: '../../assets/covid.jpg',
     id: 'image1',
     title: 'covid-19'
   },
   {
-    url: '../../assets/covid.jpg',
+    url: '../../assets/covid3.jpg',
     id: 'image2',
     title: 'covid-19'
   },
@@ -33,7 +33,6 @@ window.onload=function(){
   for(var j = 0; j< ImageList.length; j++){
     var li = document.createElement("li");
     li.setAttribute('class','lists');
-    // li.style.width = window.screen.width + 'px';
     var img = document.createElement("img");
     img.setAttribute('src', ImageList[j].url);
     img.setAttribute('title', ImageList[j].title);
@@ -71,21 +70,11 @@ show = (increase, clickedBy=false) => {
 
     if(clickedBy){
       index = increase
-      // dots.children[increase].style.background = 'red';
     }
     if(index>-1)
       dots.children[index].style.background = 'white';
     liEls[index].scrollIntoView({behavior: 'smooth'});
-    // liEls[index].children[0].style.width = window.screen.width + 'px';
   }
 
 }
-// window.show = function(increase) {
-//   index = index + increase;
-//   index = Math.min(
-//       Math.max(index,0),
-//       liEls.length-1
-//   );
-//   liEls[index].scrollIntoView({behavior: 'smooth'});
-// }
 
