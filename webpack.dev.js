@@ -4,7 +4,7 @@ const merge = require("webpack-merge");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
-  mode: "development",
+  mode: "production",
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist")
@@ -23,6 +23,10 @@ module.exports = merge(common, {
           "css-loader", //2. Turns css into commonjs
           "sass-loader" //1. Turns sass into css
         ]
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/
       }
     ]
   }
